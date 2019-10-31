@@ -1,0 +1,59 @@
+<div style="top: 20px" class="container" >
+
+
+        <form  (ngSubmit)="onSubmit()">
+        
+            <div class="container">
+        
+                    <div class="card card-container">
+                          
+                            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            
+            
+            
+            
+            <div class="form-group">
+                    <span id="reauth-email" class="reauth-email"></span>
+                
+                <input type="text" Name="username" class="form-control" placeholder="Usuario" required autofocus [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Usuario Requerido</div>
+                </div>
+            </div>
+        
+        
+        
+            <div class="form-group">
+                <input type="password" Name="password" class="form-control" placeholder="Contraseña" required autofocus [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Contraseña Requerida</div>
+                </div>
+            </div>
+            <div id="remember" class="checkbox">
+                    <label>
+                      <input type="checkbox" value="remember-me"> Recuerdame
+                    </label>
+            </div>
+        
+        
+            <div class="form-group">
+              
+                <button routerLink="/route" href="#" [disabled]="loading" class="btn btn-outline-primary">
+                    <span  *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Ingresar
+                </button>
+                
+            </div>
+        
+            <a href="#" class="forgot-password">
+                    Forgot the password?
+                  </a>
+        
+        </div>
+        
+        </div>
+        
+        </form>
+        
+        </div>

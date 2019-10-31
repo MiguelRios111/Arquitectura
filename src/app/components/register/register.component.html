@@ -1,0 +1,41 @@
+
+   
+         <form (submit)="onSubmitAddUser()">
+                <div class="container">
+    
+                <div class="card card-container">
+                        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                        <p id="profile-name" class="profile-name-card"></p>
+                        
+                        <div class="form-group">
+                               
+                            <input class="form-control"type="email" Name="username" placeholder="Usuario" required autofocus [ngModel]="email" [ngModelOptions]="{standalone: true}"/>
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">Usuario Requerido</div>
+                            </div>
+    
+                            <div class="form-group">
+                                    <input type="password" Name="password" class="form-control" placeholder="Contraseña" required autofocus [ngModel]="password" [ngModelOptions]="{standalone: true}" />
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Contraseña Requerida</div>
+                                    </div>
+                                </div>
+    
+                              
+    
+                                <div class="form-group">
+          
+                                        <button type="submit" [disabled]="loading" class="btn btn-outline-primary">
+                                            <span  *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                            Registrar
+                                        </button>
+                                        </div>
+    
+                                  
+                        </div>
+               
+                </div>
+                </div>
+        
+        </form>
+    
